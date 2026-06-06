@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airport Logos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero">
+        <p class="eyebrow">Airport Brand Logos</p>
+        <h1>100 airport logos in a static gallery.</h1>
+        <p class="intro">
+          A fixed export of major airport logos, packaged as a self-contained static site for GitHub Pages.
+        </p>
+      </section>
+
+      <section class="controls-panel">
+        <form id="controls" class="controls" autocomplete="off">
+          <label class="field">
+            <span>Amount</span>
+            <input id="count" type="number" min="1" max="100" step="1" value="100" />
+          </label>
+          <button id="load-button" type="submit">Update View</button>
+        </form>
+        <p id="status" class="status">Loading static snapshot...</p>
+      </section>
+
+      <section id="gallery" class="gallery" aria-live="polite"></section>
+    </main>
+
+    <template id="card-template">
+      <article class="logo-card">
+        <div class="logo-stage">
+          <img class="logo-image" alt="" loading="lazy" />
+        </div>
+        <div class="logo-meta">
+          <p class="logo-name"></p>
+          <p class="logo-detail"></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
